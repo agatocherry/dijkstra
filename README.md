@@ -4,13 +4,18 @@ This Python project provides a collection of algorithms for undirected graphs. I
 
 ![preview](./docs/preview.png/)
 
-## Installation
+## 📖 Table of Contents
+- [💾 Install]()
+- [⚡ Run it!]()
+
+
+## 💾 Install
 
 ```
 git clone https://github.com/agatocherry/graphs.git
 ```
 
-## Usage
+## ⚡ Run it!
 
 ```
 ./graphs.sh
