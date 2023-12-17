@@ -6,13 +6,12 @@ This Python project provides a collection of algorithms for undirected graphs. I
 
 ## Installation
 
-
-    ```bash
+```
 git clone https://github.com/agatocherry/graphs.git
 ```
 
 ## Usage
 
-```bash
+```
 ./graphs.sh
 ```
