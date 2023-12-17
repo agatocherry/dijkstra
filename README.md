@@ -6,7 +6,7 @@ Preview:
 ![preview](./docs/preview.png/)
 
 Input file (graphs) exemple:
-![preview](./docs/preview.png/)
+![preview](./docs/graphs.png/)
 
 ## Installation
 
