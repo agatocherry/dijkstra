@@ -41,14 +41,15 @@ def print_data(node, data):
         print(" ", end="")
         i += 1
     i = 0
+    print(BWHITE, end="")
     while (i < len(node)):
         print(f"{node[i]:>{lnumber}}", end=" ")
         i += 1
-    print()
+    print(RESET)
     i = 0
     while(i < len(data)):
         j = 0
-        print(f"{node[i]}", end=" ")
+        print(f"{BWHITE}{node[i]}{RESET}", end=" ")
         while(j < len(data[i])):
             print(f"{data[i][j]:>{lnumber}}", end=" ")
             j += 1
@@ -67,17 +68,21 @@ def print_neigbors(node, data):
                 neighbors.append(node[j])
             j += 1
         if (len(neighbors) > 0):
-            print(f"Neighbors of {node[i]}: ", end="")
+            print(f"Neighbors of {node[i]}: {BWHITE}", end="")
             for n in neighbors:
                 print(f"{n}", end="")
                 if (n != neighbors[-1]):
                     print(", ", end="")
-            print()
+            print(RESET)
         i += 1
 
 # * Print the order of each edge (min to max) as: [(1, 2), (1, 3), (2, 3), (2, 4), (3, 4)]
 def print_edge_order(node, data):
     print(RED + "Smallest to largest edge (Kruskal):" + RESET)
     edge = kruskal(node, data)
-    print(edge)
-    
+    i = 0
+    while(i < len(edge)):
+        print(f"{BWHITE}{edge[i][0]} {RESET}•{BWHITE} {edge[i][1]}{BLACK} ({data[search_node(node, atoi(edge[i][0]))][search_node(node, atoi(edge[i][1]))]}){RESET}", end="")
+        if (i != len(edge) - 1):
+            print(", ", end="")
+        i += 1
