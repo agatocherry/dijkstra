@@ -83,9 +83,18 @@ def search_innote(node, nb):
         i += 1
     return -1
 
+def is_sorted(node, data, edge):
+    i = 0
+    while(i < len(edge) - 1):
+        j = 0
+        if (data[search_innote(node, atoi(edge[i][0]))][search_innote(node, atoi(edge[i][1]))] > data[search_innote(node, atoi(edge[i+1][0]))][search_innote(node, atoi(edge[i+1][1]))]):
+            return 0
+        i += 1
+    return 1
+
 # * Print the order of each edge (min to max) as: [(1, 2), (1, 3), (2, 3), (2, 4), (3, 4)]
 def print_edge_order(node, data):
-    print(RED + "Small to largest edge:" + RESET)
+    print(RED + "Smallest to largest edge:" + RESET)
     i = 0
     edge = []
     while(i < len(node)):
@@ -95,17 +104,14 @@ def print_edge_order(node, data):
                 edge.append((node[i], node[j]))
             j += 1
         i += 1
-    i = 0
-    while(i < len(edge)):
-        j = 0
-        index0 = atoi(edge[i][0])
-        index1 = atoi(edge[i][1])
-        print(f"{data[search_innote(node, index0)][search_innote(node, index1)]}")
-        if (data[search_innote(node, index0)][search_innote(node, index1)] > data[search_innote(node, index1)][search_innote(node, index0)]):
-            tmp = edge[i]
-            edge[i] = (edge[i][1], edge[i][0])
-            edge[i + 1] = (tmp[1], tmp[0])
-        i += 1
-    print()
+    while (is_sorted(node, data, edge) == 0):
+        i = 0
+        while(i < len(edge) - 1):
+            j = 0
+            if (data[search_innote(node, atoi(edge[i][0]))][search_innote(node, atoi(edge[i][1]))] > data[search_innote(node, atoi(edge[i+1][0]))][search_innote(node, atoi(edge[i+1][1]))]):
+                tmp = edge[i]
+                edge[i] = edge[i + 1]
+                edge[i + 1] = tmp
+            i += 1
     print(edge)
     

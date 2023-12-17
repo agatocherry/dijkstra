@@ -4,3 +4,10 @@
 echo -e "\e[31m• Run for: graphs/simple.txt •\e[0m
 "
 python3 srcs/main.py graphs/simple.txt
+
+# * Run the program for hard.txt
+echo -e "
+
+\e[31m• Run for: graphs/hard.txt •\e[0m
+"
+python3 srcs/main.py graphs/hard.txt
