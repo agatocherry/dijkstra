@@ -6,9 +6,8 @@ from parsing import *
 from utils import *
 import sys
 
-# TODO add a numbers in the edges (and error if not)
-# TODO print each node neighbors (neighbors of 1: [2, 3])
 # TODO print the order of each edge (min to max) (edge order : [(1, 2), (1, 3), (2, 3), (2, 4), (3, 4)])
+# TODO add a more complex graph (with more nodes and edges)
 
 # * Search and give the input file
 if len(sys.argv) != 2:
@@ -20,3 +19,5 @@ if file != None:
     node = parse_node(file)
     data = parse_data(file, node)
     print_data(node, data)
+    print_neigbors(node, data)
+    print_edge_order(node, data)
