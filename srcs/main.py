@@ -17,4 +17,4 @@ if file != None:
     data = parse_data(file, node)
     print_data(node, data)
     print_neigbors(node, data)
-    print_edge_order(node, data)
+    print_kruskal(node, data)

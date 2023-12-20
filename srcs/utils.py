@@ -3,6 +3,8 @@
 from color import *
 
 def atoi(c):
+    if isinstance(c, int):
+        return c
     return max(min(int(c), 2**31 - 1), -2**31) if c.strip() else 0
 
 def nb_entier(file, i):

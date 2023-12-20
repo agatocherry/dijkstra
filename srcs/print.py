@@ -77,12 +77,22 @@ def print_neigbors(node, data):
         i += 1
 
 # * Print the order of each edge (min to max) as: [(1, 2), (1, 3), (2, 3), (2, 4), (3, 4)]
-def print_edge_order(node, data):
-    print(RED + "Smallest to largest edge (Kruskal):" + RESET)
-    edge = kruskal(node, data)
+def print_kruskal(node, data):
+    print(RED + "Smallest to largest edge:" + RESET)
+    edge = sort(node, data)
     i = 0
     while(i < len(edge)):
         print(f"{BWHITE}{edge[i][0]} {RESET}•{BWHITE} {edge[i][1]}{BLACK} ({data[search_node(node, atoi(edge[i][0]))][search_node(node, atoi(edge[i][1]))]}){RESET}", end="")
         if (i != len(edge) - 1):
             print(", ", end="")
         i += 1
+    print()
+    save = kruskal(node, data, edge)
+    print(f"{RED}Kruskal algorithm:{RESET} {BWHITE}")
+    i = 0
+    while(i < len(save)):
+        print(f"{BWHITE}{save[i][0]} {RESET}•{BWHITE} {save[i][1]}{BLACK} ({data[search_node(node, atoi(save[i][0]))][search_node(node, atoi(save[i][1]))]}){RESET}", end="")
+        if (i != len(save) - 1):
+            print(", ", end="")
+        i += 1
+    print()
